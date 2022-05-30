@@ -8,12 +8,42 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+      @media (max-width: 768px) {
+        .table thead {
+          display: none;
+        }
+        .table,
+        .table tbody,
+        .table tr,
+        .table td {
+          display: block;
+          width: 100%;
+        }
+        .table tr {
+          margin-bottom: 15px;
+        }
+        .table tbody tr td {
+          text-align: right;
+          padding-left: 50%;
+          position: relative;
+        }
+        .table td:before {
+          content: attr(data-label);
+          position: absolute;
+          left: 0;
+          width: 50%;
+          padding-left: 15px;
+          font-weight: 600;
+          font-size: 14px;
+          text-align: left;
+        }
       }
     </style>
 
@@ -26,149 +56,212 @@
         <thead class="bg-red-600">
           <tr>
             <th
-              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border border-solid border-black"
+              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border-2 border-solid border-black"
             >
               Start Date
             </th>
             <th
-              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border border-solid border-black"
+              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border-2 border-solid border-black"
             >
               Start/ End Time
             </th>
             <th
-              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border border-solid border-black"
+              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border-2 border-solid border-black"
             >
               Batch type
             </th>
             <th
-              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border border-solid border-black"
+              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border-2 border-solid border-black"
             >
               Training Mode
             </th>
             <th
-              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border border-solid border-black"
+              class="text-sm text-white font-medium tracking-widest bg-slate-100 opacity-100 px-3 py-3 align-top border-2 border-solid border-black"
             >
               Batch Status
             </th>
             <th
-              class="text-sm text-white font-medium tracking-widest text-slate-100 opacity-100 px-3 py-3 align-top border border-solid border-black"
+              class="text-sm text-white font-medium tracking-widest text-slate-100 opacity-100 px-3 py-3 align-top border-2 border-solid border-black"
             >
               #
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-gray-700">
           <tr class="">
             <td
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              data-label="Start Date"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               1 Jan 2021
             </td>
             <td
               data-label="Start/ End Time"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               09:00 - 13.00 (IST)
             </td>
             <td
               data-label="Batch Type"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               Weekend
             </td>
             <td
               data-label="Training Mode"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               Online Training
             </td>
             <td
               data-label="Batch Status"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
-              <span class="text_open">[ Open ]</span>
+              <span class="font-sm font-bold tracking-widest text-red-400"
+                >[ Open ]</span
+              >
             </td>
             <td
               data-label="#"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
-              <a href="#" class="btn">Enroll Now</a>
+              <a
+                href="#"
+                class="w-32 decoration-0 leading-9 inline-block bg-red-700 font-medium text-white text-center align-middle select-none border border-solid border-transparent font-sm opacity-100"
+                >Enroll Now</a
+              >
             </td>
           </tr>
-
           <tr class="">
             <td
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              data-label="Start Date"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               1 Jan 2021
             </td>
             <td
               data-label="Start/ End Time"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               09:00 - 13.00 (IST)
             </td>
             <td
               data-label="Batch Type"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               Weekend
             </td>
             <td
               data-label="Training Mode"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               Online Training
             </td>
             <td
               data-label="Batch Status"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
-              <span class="text_open">[ Open ]</span>
+              <span class="font-sm font-bold tracking-widest text-red-400"
+                >[ Open ]</span
+              >
             </td>
             <td
               data-label="#"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
-              <a href="#" class="btn">Enroll Now</a>
+              <a
+                href="#"
+                class="w-32 decoration-0 leading-9 inline-block bg-red-700 font-medium text-white text-center align-middle select-none border border-solid border-transparent font-sm opacity-100"
+                >Enroll Now</a
+              >
             </td>
           </tr>
-
           <tr class="">
             <td
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              data-label="Start Date"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               1 Jan 2021
             </td>
             <td
               data-label="Start/ End Time"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               09:00 - 13.00 (IST)
             </td>
             <td
               data-label="Batch Type"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               Weekend
             </td>
             <td
               data-label="Training Mode"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
               Online Training
             </td>
             <td
               data-label="Batch Status"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
-              <span class="text_open">[ Open ]</span>
+              <span class="font-sm font-bold tracking-widest text-red-400"
+                >[ Open ]</span
+              >
             </td>
             <td
               data-label="#"
-              class="bg-gray-700 text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border border-solid border-black"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
             >
-              <a href="#" class="btn">Enroll Now</a>
+              <a
+                href="#"
+                class="w-32 decoration-0 leading-9 inline-block bg-red-700 font-medium text-white text-center align-middle select-none border border-solid border-transparent font-sm opacity-100"
+                >Enroll Now</a
+              >
+            </td>
+          </tr>
+          <tr class="">
+            <td
+              data-label="Start Date"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
+            >
+              1 Jan 2021
+            </td>
+            <td
+              data-label="Start/ End Time"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
+            >
+              09:00 - 13.00 (IST)
+            </td>
+            <td
+              data-label="Batch Type"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
+            >
+              Weekend
+            </td>
+            <td
+              data-label="Training Mode"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
+            >
+              Online Training
+            </td>
+            <td
+              data-label="Batch Status"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
+            >
+              <span class="font-sm font-bold tracking-widest text-red-400"
+                >[ Open ]</span
+              >
+            </td>
+            <td
+              data-label="#"
+              class="text-sm text-center font-normal tracking-widest text-white px-2 py-2 align-top border-slate-900 border-2 border-solid border-black"
+            >
+              <a
+                href="#"
+                class="w-32 decoration-0 leading-9 inline-block bg-red-700 font-medium text-white text-center align-middle select-none border border-solid border-transparent font-sm opacity-100"
+                >Enroll Now</a
+              >
             </td>
           </tr>
         </tbody>
